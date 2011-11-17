@@ -1,0 +1,7 @@
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="order_tab_info">
+            <block type="ordercomment/adminhtml_sales_order_view_ordercomment" name="order_ordercomment"></block>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

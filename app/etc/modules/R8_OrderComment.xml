@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <R8_OrderComment>
+            <active>true</active>
+            <codePool>community</codePool>
+        </R8_OrderComment>
+    </modules>
+</config>

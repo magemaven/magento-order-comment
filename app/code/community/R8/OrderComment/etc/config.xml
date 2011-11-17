@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <R8_OrderComment>
+            <version>0.0.0.1</version>
+        </R8_OrderComment>
+    </modules>
+
+    <global>
+        <resources>
+            <ordercomment_setup>
+                <setup>
+                    <module>R8_OrderComment</module>
+                    <class>Mage_Sales_Model_Resource_Setup</class>
+                </setup>
+            </ordercomment_setup>
+        </resources>
+        <blocks>
+            <ordercomment>
+                <class>R8_OrderComment_Block</class>
+            </ordercomment>
+        </blocks>
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <ordercomment>
+                    <file>ordercomment.xml</file>
+                </ordercomment>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
