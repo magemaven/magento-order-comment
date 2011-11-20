@@ -7,6 +7,12 @@
     </modules>
 
     <global>
+        <helpers>
+            <ordercomment>
+                <class>R8_OrderComment_Helper</class>
+            </ordercomment>
+        </helpers>
+
         <resources>
             <ordercomment_setup>
                 <setup>

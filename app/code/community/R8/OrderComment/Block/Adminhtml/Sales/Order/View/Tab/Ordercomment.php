@@ -21,7 +21,7 @@ class R8_OrderComment_Block_Adminhtml_Sales_Order_View_Tab_Ordercomment
      */
     public function getTabTitle()
     {
-        return Mage::helper('sales')->__('Customer Order Comment');
+        return Mage::helper('ordercomment')->__('Customer Order Comment');
     }
 
     /**
@@ -31,7 +31,7 @@ class R8_OrderComment_Block_Adminhtml_Sales_Order_View_Tab_Ordercomment
      */
     public function getTabLabel()
     {
-        return Mage::helper('sales')->__('Customer Comment');
+        return Mage::helper('ordercomment')->__('Customer Comment');
     }
 
     /**
