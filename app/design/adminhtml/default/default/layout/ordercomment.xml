@@ -1,7 +1,8 @@
 <layout>
     <adminhtml_sales_order_view>
-        <reference name="order_tab_info">
-            <block type="ordercomment/adminhtml_sales_order_view_ordercomment" name="order_ordercomment"  template="ordercomment/sales/order/view/ordercomment.phtml"></block>
+        <reference name="sales_order_tabs">
+            <block type="ordercomment/adminhtml_sales_order_view_tab_ordercomment" name="order_tab_ordercomment"  template="ordercomment/sales/order/view/tab/ordercomment.phtml" />
+            <action method="addTab"><name>order_ordercomment</name><block>order_tab_ordercomment</block></action>
         </reference>
     </adminhtml_sales_order_view>
 </layout>
