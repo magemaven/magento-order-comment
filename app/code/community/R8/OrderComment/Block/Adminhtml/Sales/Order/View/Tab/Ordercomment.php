@@ -5,6 +5,16 @@ class R8_OrderComment_Block_Adminhtml_Sales_Order_View_Tab_Ordercomment
     implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
     /**
+     * Retrieve order model instance
+     *
+     * @return Mage_Sales_Model_Order
+     */
+    public function getOrder()
+    {
+        return Mage::registry('current_order');
+    }
+
+    /**
      * Return Tab title
      *
      * @return string
