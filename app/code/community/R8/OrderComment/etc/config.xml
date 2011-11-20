@@ -28,6 +28,16 @@
         </blocks>
     </global>
 
+    <frontend>
+        <layout>
+            <updates>
+                <ordercomment>
+                    <file>ordercomment.xml</file>
+                </ordercomment>
+            </updates>
+        </layout>
+    </frontend>
+
     <adminhtml>
         <layout>
             <updates>

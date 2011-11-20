@@ -1,0 +1,7 @@
+<layout>
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="ordercomment/checkout_onepage_review_info_ordercomment" name="checkout_onepage_review_info_ordercomment"  template="ordercomment/checkout/onepage/review/info/ordercomment.phtml" />
+        </reference>
+    </checkout_onepage_review>
+</layout>
