@@ -21,10 +21,16 @@
                 </setup>
             </ordercomment_setup>
         </resources>
+
         <blocks>
             <ordercomment>
                 <class>R8_OrderComment_Block</class>
             </ordercomment>
+            <checkout>
+                <rewrite>
+                    <onepage_review_info>R8_OrderComment_Block_Checkout_Onepage_Review_Info</onepage_review_info>
+                </rewrite>
+            </checkout>
         </blocks>
     </global>
 
