@@ -1,4 +1,0 @@
-<?php
-class R8_OrderComment_Block_Checkout_Onepage_Review_Info_Ordercomment_Js extends Mage_Core_Block_Template
-{
-}

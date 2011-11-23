@@ -28,21 +28,11 @@
             </ordercomment>
             <checkout>
                 <rewrite>
-                    <onepage_review_info>R8_OrderComment_Block_Checkout_Onepage_Review_Info</onepage_review_info>
+                    <agreements>R8_OrderComment_Block_Checkout_Agreements</agreements>
                 </rewrite>
             </checkout>
         </blocks>
     </global>
-
-    <frontend>
-        <layout>
-            <updates>
-                <ordercomment>
-                    <file>ordercomment.xml</file>
-                </ordercomment>
-            </updates>
-        </layout>
-    </frontend>
 
     <adminhtml>
         <layout>
