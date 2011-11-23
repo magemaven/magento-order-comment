@@ -4,6 +4,9 @@
         <R8_OrderComment>
             <active>true</active>
             <codePool>community</codePool>
+            <depends>
+                <Mage_Checkout />
+            </depends>
         </R8_OrderComment>
     </modules>
 </config>
