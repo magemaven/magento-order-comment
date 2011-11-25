@@ -1,14 +1,20 @@
 <form action="" id="checkout-agreements" onsubmit="return false;">
-    <fieldset>
-        <ul>
-            <li class="wide">
-                <label for="ordercomment-comment"><?php echo Mage::helper('ordercomment')->__('Order Comment') ?></label>
-                <div class="input-box">
-                    <textarea id="ordercomment-comment" class="input-text validation-passed" name="ordercomment[comment]" title="<?php echo $this->__('Order Comment') ?>" rows="5" cols="10"></textarea>
-                </div>
+    <div class="buttons-set">
+        <ul class="form-list">
+            <li>
+                <fieldset>
+                    <ul>
+                        <li class="wide">
+                            <label for="ordercomment-comment"><?php echo Mage::helper('ordercomment')->__('Order Comment') ?></label>
+                            <div class="input-box">
+                                <textarea id="ordercomment-comment" class="input-text validation-passed" name="ordercomment[comment]" title="<?php echo $this->__('Order Comment') ?>" rows="5" cols="10"></textarea>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
             </li>
         </ul>
-    </fieldset>
+    </div>
 
     <?php if (!$this->getAgreements()): ?>
         <ol class="checkout-agreements">
