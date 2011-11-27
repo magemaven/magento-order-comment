@@ -13,7 +13,10 @@ class R8_OrderComment_Model_Observer extends Varien_Object
             $comment = trim($orderComment['comment']);
 
             if (!empty($comment)) {
-                $observer->getEvent()->getOrder()->setCustomerComment($comment);
+                $order = $observer->getEvent()->getOrder(); 
+                $order->setCustomerComment($comment);
+                $order->setCustomerNoteNotify(true);
+                $order->setCustomerNote($comment);
             }
         }
     }
