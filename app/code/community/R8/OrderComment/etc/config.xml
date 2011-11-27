@@ -5,14 +5,12 @@
             <version>0.0.0.1</version>
         </R8_OrderComment>
     </modules>
-
     <global>
         <models>
             <ordercomment>
                 <class>R8_OrderComment_Model</class>
             </ordercomment>
         </models>
-
         <helpers>
             <ordercomment>
                 <class>R8_OrderComment_Helper</class>
@@ -29,7 +27,6 @@
             </checkout>
         </blocks>
     </global>
-
     <frontend>
         <events>
             <checkout_type_onepage_save_order>
