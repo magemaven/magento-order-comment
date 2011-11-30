@@ -1,5 +1,5 @@
 <?php
-class R8_OrderComment_Block_Checkout_Agreements extends Mage_Checkout_Block_Agreements
+class Magemaven_OrderComment_Block_Checkout_Agreements extends Mage_Checkout_Block_Agreements
 {
     /**
      * Override block template

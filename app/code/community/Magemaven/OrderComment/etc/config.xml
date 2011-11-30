@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <R8_OrderComment>
+        <Magemaven_OrderComment>
             <version>0.0.0.1</version>
-        </R8_OrderComment>
+        </Magemaven_OrderComment>
     </modules>
     <global>
         <models>
             <ordercomment>
-                <class>R8_OrderComment_Model</class>
+                <class>Magemaven_OrderComment_Model</class>
             </ordercomment>
         </models>
         <helpers>
             <ordercomment>
-                <class>R8_OrderComment_Helper</class>
+                <class>Magemaven_OrderComment_Helper</class>
             </ordercomment>
         </helpers>
         <blocks>
             <ordercomment>
-                <class>R8_OrderComment_Block</class>
+                <class>Magemaven_OrderComment_Block</class>
             </ordercomment>
             <checkout>
                 <rewrite>
-                    <agreements>R8_OrderComment_Block_Checkout_Agreements</agreements>
+                    <agreements>Magemaven_OrderComment_Block_Checkout_Agreements</agreements>
                 </rewrite>
             </checkout>
         </blocks>
@@ -32,7 +32,7 @@
             <checkout_type_onepage_save_order>
                 <observers>
                     <saveCustomerComment>
-                        <class>R8_OrderComment_Model_Observer</class>
+                        <class>Magemaven_OrderComment_Model_Observer</class>
                         <method>saveOrderComment</method>
                     </saveCustomerComment>
                 </observers>
@@ -40,7 +40,7 @@
             <checkout_type_multishipping_create_orders_single>
                 <observers>
                     <saveCustomerComment>
-                        <class>R8_OrderComment_Model_Observer</class>
+                        <class>Magemaven_OrderComment_Model_Observer</class>
                         <method>saveOrderComment</method>
                     </saveCustomerComment>
                 </observers>

@@ -1,5 +1,5 @@
 <?php
-class R8_OrderComment_Model_Observer extends Varien_Object
+class Magemaven_OrderComment_Model_Observer extends Varien_Object
 {
     /**
      * Save comment from agreement form to order
