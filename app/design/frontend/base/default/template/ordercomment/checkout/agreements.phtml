@@ -29,7 +29,7 @@
         </ul>
     </div>
 
-    <?php if (!$this->getAgreements()): ?>
+    <?php if ($this->getAgreements()): ?>
         <ol class="checkout-agreements">
             <?php foreach ($this->getAgreements() as $_a): ?>
             <li>
