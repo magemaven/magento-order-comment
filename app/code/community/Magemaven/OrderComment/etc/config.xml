@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE_AFL.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+*
+* @category    Magemaven
+* @package     Magemaven_OrderComment
+* @copyright   Copyright (c) 2011 Sergey Storchay <r8@r8.com.ua>
+* @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*/
+-->
+<config>
+    <modules>
+        <Magemaven_OrderComment>
+            <version>0.0.0.1</version>
+        </Magemaven_OrderComment>
+    </modules>
+    <global>
+        <models>
+            <ordercomment>
+                <class>Magemaven_OrderComment_Model</class>
+            </ordercomment>
+        </models>
+        <helpers>
+            <ordercomment>
+                <class>Magemaven_OrderComment_Helper</class>
+            </ordercomment>
+        </helpers>
+        <blocks>
+            <ordercomment>
+                <class>Magemaven_OrderComment_Block</class>
+            </ordercomment>
+            <checkout>
+                <rewrite>
+                    <agreements>Magemaven_OrderComment_Block_Checkout_Agreements</agreements>
+                </rewrite>
+            </checkout>
+        </blocks>
+    </global>
+    <frontend>
+        <events>
+            <checkout_type_onepage_save_order>
+                <observers>
+                    <saveCustomerComment>
+                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <method>saveOrderComment</method>
+                    </saveCustomerComment>
+                </observers>
+            </checkout_type_onepage_save_order>
+            <checkout_type_multishipping_create_orders_single>
+                <observers>
+                    <saveCustomerComment>
+                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <method>saveOrderComment</method>
+                    </saveCustomerComment>
+                </observers>
+            </checkout_type_multishipping_create_orders_single>
+        </events>
+    </frontend>
+</config>
