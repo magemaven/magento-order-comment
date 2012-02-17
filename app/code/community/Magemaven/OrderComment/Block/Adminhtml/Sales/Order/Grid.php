@@ -12,4 +12,31 @@
  */
 class Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid extends Mage_Adminhtml_Block_Sales_Order_Grid
 {
+    /**
+     * Retrieve collection class
+     *
+     * @return string
+     */
+    protected function _getCollectionClass()
+    {
+        return 'ordercomment/order_grid_collection';
+    }
+
+    /**
+     * Prepare grid columns
+     *
+     * @return Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid
+     */
+    protected function _prepareColumns()
+    {
+        parent::_prepareColumns();
+
+        // Add order comment to grid
+        $this->addColumn('ordercomment', array(
+            'header' => Mage::helper('ordercomment')->__('Order Comment'),
+            'index' => 'ordercomment',
+        ));
+
+        return $this;
+    }
 }

@@ -22,7 +22,18 @@
         <models>
             <ordercomment>
                 <class>Magemaven_OrderComment_Model</class>
+                <resourceModel>ordercomment_resource</resourceModel>
             </ordercomment>
+            <ordercomment_resource>
+                <class>Magemaven_OrderComment_Model_Resource</class>
+            </ordercomment_resource>
+            <sales_resource>
+                <rewrite>
+                    <order_grid_collection>
+                        Magemaven_OrderComment_Model_Resource_Order_Grid_Collection
+                    </order_grid_collection>
+                </rewrite>
+            </sales_resource>
         </models>
         <helpers>
             <ordercomment>
