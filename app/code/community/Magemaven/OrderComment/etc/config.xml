@@ -8,21 +8,33 @@
 *
 * @category    Magemaven
 * @package     Magemaven_OrderComment
-* @copyright   Copyright (c) 2011 Sergey Storchay <r8@r8.com.ua>
+* @copyright   Copyright (c) 2011-2012 Sergey Storchay <r8@r8.com.ua>
 * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 */
 -->
 <config>
     <modules>
         <Magemaven_OrderComment>
-            <version>1.0.2.0</version>
+            <version>1.0.3.0</version>
         </Magemaven_OrderComment>
     </modules>
     <global>
         <models>
             <ordercomment>
                 <class>Magemaven_OrderComment_Model</class>
+                <resourceModel>ordercomment_resource</resourceModel>
             </ordercomment>
+            <ordercomment_resource>
+                <class>Magemaven_OrderComment_Model_Resource</class>
+                <deprecatedNode>ordercomment_mysql4</deprecatedNode>
+            </ordercomment_resource>
+            <sales_resource>
+                <rewrite>
+                    <order_grid_collection>
+                        Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection
+                    </order_grid_collection>
+                </rewrite>
+            </sales_resource>
         </models>
         <helpers>
             <ordercomment>
@@ -38,6 +50,11 @@
                     <agreements>Magemaven_OrderComment_Block_Checkout_Agreements</agreements>
                 </rewrite>
             </checkout>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
         </blocks>
     </global>
     <frontend>
