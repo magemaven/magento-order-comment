@@ -10,7 +10,7 @@
  * @copyright   Copyright (c) 2011-2012 Sergey Storchay <r8@r8.com.ua>
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-class Magemaven_OrderComment_Model_Resource_Order_Grid_Collection extends Mage_Sales_Model_Resource_Order_Grid_Collection
+class Magemaven_OrderComment_Model_Resource_Order_Grid_Collection extends Mage_Sales_Model_Mysql4_Order_Grid_Collection
 {
     /**
      * Init collection select

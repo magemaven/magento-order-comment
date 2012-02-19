@@ -26,11 +26,12 @@
             </ordercomment>
             <ordercomment_resource>
                 <class>Magemaven_OrderComment_Model_Resource</class>
+                <deprecatedNode>ordercomment_mysql4</deprecatedNode>
             </ordercomment_resource>
             <sales_resource>
                 <rewrite>
                     <order_grid_collection>
-                        Magemaven_OrderComment_Model_Resource_Order_Grid_Collection
+                        Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection
                     </order_grid_collection>
                 </rewrite>
             </sales_resource>
