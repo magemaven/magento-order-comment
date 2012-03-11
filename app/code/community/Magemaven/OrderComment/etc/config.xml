@@ -15,7 +15,7 @@
 <config>
     <modules>
         <Magemaven_OrderComment>
-            <version>1.0.3.0</version>
+            <version>1.0.4.0</version>
         </Magemaven_OrderComment>
     </modules>
     <global>
@@ -30,9 +30,7 @@
             </ordercomment_resource>
             <sales_resource>
                 <rewrite>
-                    <order_grid_collection>
-                        Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection
-                    </order_grid_collection>
+                    <order_grid_collection>Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection</order_grid_collection>
                 </rewrite>
             </sales_resource>
         </models>
