@@ -19,6 +19,7 @@
             <codePool>community</codePool>
             <depends>
                 <Mage_Checkout />
+                <Mage_Sales />
             </depends>
         </Magemaven_OrderComment>
     </modules>
