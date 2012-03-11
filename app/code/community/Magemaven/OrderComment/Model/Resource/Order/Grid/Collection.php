@@ -30,6 +30,4 @@ class Magemaven_OrderComment_Model_Resource_Order_Grid_Collection extends Mage_S
 
         return $this;
     }
-
-
 }
