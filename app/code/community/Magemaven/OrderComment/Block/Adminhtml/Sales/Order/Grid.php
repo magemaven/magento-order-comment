@@ -57,4 +57,24 @@ class Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid extends Mage_Admin
 
         return $this;
     }
+
+    /**
+     * Prepare grid massactions
+     *
+     * @return Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid
+     */
+    protected function _prepareMassaction()
+    {
+        parent::_prepareMassaction();
+
+        // VERY dirty hack to resolve conflict with Seamless Delete Order
+        $modules = (array)Mage::getConfig()->getNode('modules')->children();
+        if (isset($modules['EM_DeleteOrder']) && $modules['EM_DeleteOrder']->is('active')) {
+            $this->getMassactionBlock()->addItem('delete_order', array(
+               'label'=> Mage::helper('sales')->__('Delete order'),
+               'url'  => $this->getUrl('*/sales_order/deleteorder'),
+            ));
+        }
+        return $this;
+    }
 }

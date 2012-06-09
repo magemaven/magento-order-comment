@@ -32,4 +32,14 @@ class Magemaven_OrderComment_Model_Resource_Order_Grid_Collection extends Mage_S
 
         return $this;
     }
+
+    /**
+     * Init collection count select
+     *
+     * @return Varien_Db_Select
+     */
+    public function getSelectCountSql()
+    {
+        return parent::getSelectCountSql()->reset(Zend_Db_Select::GROUP);
+    }
 }
