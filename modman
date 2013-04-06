@@ -1,0 +1,3 @@
+app/code/community/Magemaven/OrderComment              app/code/community/Magemaven/OrderComment
+app/design/frontend/base/default/template/ordercomment app/design/frontend/base/default/template/ordercomment
+app/etc/modules/Magemaven_OrderComment.xml             app/etc/modules/Magemaven_OrderComment.xml
