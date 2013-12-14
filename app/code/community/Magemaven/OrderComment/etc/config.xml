@@ -73,6 +73,14 @@
                     </saveCustomerComment>
                 </observers>
             </checkout_type_multishipping_create_orders_single>
+            <sales_order_status_history_save_before>
+                <observers>
+                    <setOrderCommentVisibility>
+                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <method>setOrderCommentVisibility</method>
+                    </setOrderCommentVisibility>
+                </observers>
+            </sales_order_status_history_save_before>
         </events>
     </frontend>
 </config>
