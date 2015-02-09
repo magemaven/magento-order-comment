@@ -13,6 +13,13 @@
 class Magemaven_OrderComment_Model_Observer extends Varien_Object
 {
     /**
+     * Current comment
+     *
+     * @var bool|string
+     */
+    protected $_currentComment = false;
+
+    /**
      * Save comment from agreement form to order
      *
      * @param $observer
@@ -26,10 +33,27 @@ class Magemaven_OrderComment_Model_Observer extends Varien_Object
 
             if (!empty($comment)) {
                 $order = $observer->getEvent()->getOrder(); 
-                $order->setCustomerComment($comment);
                 $order->setCustomerNoteNotify(true);
                 $order->setCustomerNote($comment);
+                $this->_currentComment = $comment;
             }
         }
+    }
+
+    /**
+     * Show customer comment in 'My Account'
+     *
+     * @param $observer
+     */
+    public function setOrderCommentVisibility($observer)
+    {
+        if ($this->_currentComment) {
+            $statusHistory = $observer->getEvent()->getStatusHistory();
+
+            if ($statusHistory && $this->_currentComment == $statusHistory->getComment()) {
+                $statusHistory->setIsVisibleOnFront(1);
+            }
+        }
+
     }
 }
