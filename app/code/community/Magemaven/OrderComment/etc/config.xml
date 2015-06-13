@@ -48,11 +48,6 @@
                     <agreements>Magemaven_OrderComment_Block_Checkout_Agreements</agreements>
                 </rewrite>
             </checkout>
-            <adminhtml>
-                <rewrite>
-                    <sales_order_grid>Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
-                </rewrite>
-            </adminhtml>
         </blocks>
     </global>
     <frontend>
@@ -83,4 +78,26 @@
             </sales_order_status_history_save_before>
         </events>
     </frontend>
+    <adminhtml>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <ordercomment_sales_order_grid_column_append>
+                        <type>model</type>
+                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <method>appendColumnToSalesOrderGrid</method>
+                    </ordercomment_sales_order_grid_column_append>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+			<sales_order_grid_collection_load_before>
+				<observers>
+					<sales_order_grid_collection_append>
+                        <type>model</type>
+						<class>Magemaven_OrderComment_Model_Observer</class>
+						<method>beforeCollectionLoad</method>
+					</sales_order_grid_collection_append>
+				</observers>
+			</sales_order_grid_collection_load_before>
+        </events>
+    </adminhtml>
 </config>
