@@ -82,16 +82,16 @@ class Magemaven_OrderComment_Model_Observer extends Varien_Object
 	
 	public function beforeCollectionLoad(Varien_Event_Observer $observer)
     {
+		
         $collection = $observer->getData('order_grid_collection');
         if (!isset($collection)) {
             return;
         }
 		
         /**
-         * Mage_Sales_Model_Mysql4_Order_Grid_Collection
+         * Mage_Sales_Model_Mysql4_Order_Grid_Collection (1.5.1.0) || Mage_Sales_Model_Resource_Order_Grid_Collection (1.9.1.0)
          */
-        if ($collection instanceof Mage_Sales_Model_Mysql4_Order_Grid_Collection) {
-            /* @var $collection Mage_Sales_Model_Mysql4_Order_Grid_Collection */
+        if ($collection instanceof Mage_Sales_Model_Mysql4_Order_Grid_Collection || $collection instanceof Mage_Sales_Model_Resource_Order_Grid_Collection) {
 			$collection->getSelect()->join(
 				array('order'=> 'sales_flat_order'), 'order.entity_id = main_table.entity_id', array('order.customer_note')
 			);
