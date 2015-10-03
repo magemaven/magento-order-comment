@@ -82,7 +82,6 @@ class Magemaven_OrderComment_Model_Observer extends Varien_Object
 	
 	public function beforeCollectionLoad(Varien_Event_Observer $observer)
     {
-		
         $collection = $observer->getData('order_grid_collection');
         if (!isset($collection)) {
             return;

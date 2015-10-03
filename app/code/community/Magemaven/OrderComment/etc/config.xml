@@ -30,9 +30,14 @@
             </ordercomment_resource>
             <sales_resource>
                 <rewrite>
-                    <order_grid_collection>Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection</order_grid_collection>
+                    <order_grid_collection>Magemaven_OrderComment_Model_Resource_Order_Grid_Collection</order_grid_collection>
                 </rewrite>
             </sales_resource>
+            <sales_mysql4>
+                <rewrite>
+                    <order_grid_collection>Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection</order_grid_collection>
+                </rewrite>
+            </sales_mysql4>
         </models>
         <helpers>
             <ordercomment>
