@@ -56,7 +56,19 @@
         </blocks>
     </global>
     <frontend>
-        <events>
+     
+	 <translate>
+            <modules>
+                <Magemaven_OrderComment>
+                    <files>
+                        <default>ordercoments.csv</default>
+                    </files>
+                </Magemaven_OrderComment>
+            </modules>
+        </translate>
+  
+
+	   <events>
             <checkout_type_onepage_save_order>
                 <observers>
                     <saveCustomerComment>
