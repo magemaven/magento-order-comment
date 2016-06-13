@@ -1,5 +1,7 @@
-Magemaven OrderComment
-======================
+[UNMAINTAINED] Magemaven OrderComment
+=====================================
+
+**This module is no longer maintained**
 
 Simple extension that adds new field to order review checkout section, where customers can leave comments to their orders.
 
