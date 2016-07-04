@@ -60,7 +60,7 @@
             <checkout_type_onepage_save_order>
                 <observers>
                     <saveCustomerComment>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>saveOrderComment</method>
                     </saveCustomerComment>
                 </observers>
@@ -68,7 +68,7 @@
             <checkout_type_multishipping_create_orders_single>
                 <observers>
                     <saveCustomerComment>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>saveOrderComment</method>
                     </saveCustomerComment>
                 </observers>
@@ -76,7 +76,7 @@
             <sales_order_status_history_save_before>
                 <observers>
                     <setOrderCommentVisibility>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>setOrderCommentVisibility</method>
                     </setOrderCommentVisibility>
                 </observers>
@@ -85,24 +85,23 @@
     </frontend>
     <adminhtml>
         <events>
-            <core_block_abstract_prepare_layout_before>
+            <adminhtml_block_html_before>
                 <observers>
                     <ordercomment_sales_order_grid_column_append>
-                        <type>model</type>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>appendColumnToSalesOrderGrid</method>
                     </ordercomment_sales_order_grid_column_append>
                 </observers>
-            </core_block_abstract_prepare_layout_before>
-			<sales_order_grid_collection_load_before>
-				<observers>
-					<sales_order_grid_collection_append>
+            </adminhtml_block_html_before>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <sales_order_grid_collection_append>
                         <type>model</type>
-						<class>Magemaven_OrderComment_Model_Observer</class>
-						<method>beforeCollectionLoad</method>
-					</sales_order_grid_collection_append>
-				</observers>
-			</sales_order_grid_collection_load_before>
+                        <class>ordercomment/observer</class>
+                        <method>beforeCollectionLoad</method>
+                    </sales_order_grid_collection_append>
+                </observers>
+            </sales_order_grid_collection_load_before>
         </events>
     </adminhtml>
 </config>
