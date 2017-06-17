@@ -11,7 +11,9 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<?php if ($this->isOnePageCheckout()) : ?>
 <form action="" id="checkout-agreements" onsubmit="return false;">
+<?php endif; ?>
     <div class="buttons-set">
         <ul class="form-list">
             <li>
@@ -47,4 +49,6 @@
             <?php endforeach ?>
         </ol>
     <?php endif; ?>
+<?php if ($this->isOnePageCheckout()) : ?>
 </form>
+<?php endif; ?>
