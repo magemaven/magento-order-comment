@@ -30,9 +30,14 @@
             </ordercomment_resource>
             <sales_resource>
                 <rewrite>
-                    <order_grid_collection>Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection</order_grid_collection>
+                    <order_grid_collection>Magemaven_OrderComment_Model_Resource_Order_Grid_Collection</order_grid_collection>
                 </rewrite>
             </sales_resource>
+            <sales_mysql4>
+                <rewrite>
+                    <order_grid_collection>Magemaven_OrderComment_Model_Mysql4_Order_Grid_Collection</order_grid_collection>
+                </rewrite>
+            </sales_mysql4>
         </models>
         <helpers>
             <ordercomment>
@@ -48,11 +53,6 @@
                     <agreements>Magemaven_OrderComment_Block_Checkout_Agreements</agreements>
                 </rewrite>
             </checkout>
-            <adminhtml>
-                <rewrite>
-                    <sales_order_grid>Magemaven_OrderComment_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
-                </rewrite>
-            </adminhtml>
         </blocks>
     </global>
     <frontend>
@@ -60,7 +60,7 @@
             <checkout_type_onepage_save_order>
                 <observers>
                     <saveCustomerComment>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>saveOrderComment</method>
                     </saveCustomerComment>
                 </observers>
@@ -68,7 +68,7 @@
             <checkout_type_multishipping_create_orders_single>
                 <observers>
                     <saveCustomerComment>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>saveOrderComment</method>
                     </saveCustomerComment>
                 </observers>
@@ -76,11 +76,32 @@
             <sales_order_status_history_save_before>
                 <observers>
                     <setOrderCommentVisibility>
-                        <class>Magemaven_OrderComment_Model_Observer</class>
+                        <class>ordercomment/observer</class>
                         <method>setOrderCommentVisibility</method>
                     </setOrderCommentVisibility>
                 </observers>
             </sales_order_status_history_save_before>
         </events>
     </frontend>
+    <adminhtml>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <ordercomment_sales_order_grid_column_append>
+                        <class>ordercomment/observer</class>
+                        <method>appendColumnToSalesOrderGrid</method>
+                    </ordercomment_sales_order_grid_column_append>
+                </observers>
+            </adminhtml_block_html_before>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <sales_order_grid_collection_append>
+                        <type>model</type>
+                        <class>ordercomment/observer</class>
+                        <method>beforeCollectionLoad</method>
+                    </sales_order_grid_collection_append>
+                </observers>
+            </sales_order_grid_collection_load_before>
+        </events>
+    </adminhtml>
 </config>

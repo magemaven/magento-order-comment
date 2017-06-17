@@ -12,6 +12,16 @@
  */
 class Magemaven_OrderComment_Model_Resource_Order_Grid_Collection extends Mage_Sales_Model_Mysql4_Order_Grid_Collection
 {
+	protected function _initSelect()
+	{
+		parent::_initSelect();
+ 		$this->addFilterToMap('increment_id', 'main_table.increment_id');
+ 		$this->addFilterToMap('created_at', 'main_table.created_at');
+ 		$this->addFilterToMap('base_grand_total', 'main_table.base_grand_total');
+ 		$this->addFilterToMap('grand_total', 'main_table.grand_total');
+ 		$this->addFilterToMap('status', 'main_table.status');
+	}
+
     protected function _afterLoad()
     {
         parent::_afterLoad();
